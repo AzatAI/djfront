@@ -24,4 +24,6 @@ import click
 
 
 def cli():
+    click.secho('Thanks for Using AzatAI Django Frontend tool!', fg='blue')
+    click.secho('Checking for static and templates directories...')
     prepare_dirs()
