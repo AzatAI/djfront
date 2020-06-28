@@ -36,7 +36,7 @@ requires = [
 
 about = {}  # create a empty dictionary to store the content of the __version__.py file
 # execute the __version__.py file and get the content, save to the dictionary about.
-with open(os.path.join(here, 'src', '__version__.py'), 'r', 'utf-8') as f:
+with open(os.path.join(here, 'djfront', '__version__.py'), 'r', 'utf-8') as f:
     exec(f.read(), about)
 
 with open('README.md', 'r', 'utf-8') as f:
@@ -53,13 +53,13 @@ setup(
     url=about['__url__'],
     packages=find_packages(),
     package_data={'': ['LICENSE']},
-    # package_dir={'startpkg': 'src'},
+    # package_dir={'djf': 'src'},
     include_package_data=True,
     python_requires=">=3.5",
     install_requires=requires,
     entry_points='''
         [console_scripts]
-        startpkg=src.cli:cli
+        djfront=djfront.cli:cli
     ''',
     license=about['__license__'],
     zip_safe=False,
@@ -78,6 +78,6 @@ setup(
     ],
     project_urls={
         'Documentation': 'https://azat.ai',
-        'Source': 'https://github.com/AzatAI/startpkg',
+        'Source': 'https://github.com/AzatAI/djfront',
     },
 )
