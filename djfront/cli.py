@@ -19,7 +19,9 @@ django app dir always has a manage.py file. that is always works as a django app
 
 2. find the index.html file at first and get the html file resources.
 """
-from .utils import prepare_dirs
+import sys
+
+from .utils import prepare_dirs, get_all_htmls
 import click
 
 
@@ -27,3 +29,10 @@ def cli():
     click.secho('Thanks for Using AzatAI Django Frontend tool!', fg='blue')
     click.secho('Checking for static and templates directories...')
     prepare_dirs()
+    # detect and get html files list.
+    htmls = get_all_htmls()
+    print(htmls)
+    print('1')
+    if not htmls:
+        click.secho('html files not found in current directory!!', fg='red')
+        sys.exit(1)
