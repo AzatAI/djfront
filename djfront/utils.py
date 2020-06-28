@@ -30,10 +30,8 @@ def prepare_dirs():
     djstatic and djtemplates.
     :return:
     """
-    static = os.path.join(here, 'static')
-    templates = os.path.join(here, 'templates')
-    for each in [static, templates]:
-        if os.path.isdir(each):
+    for each in ['static', 'templates']:
+        if os.path.isdir(os.path.join(here, each)):
             pass
         else:
-            os.path.mkdir(each)
+            os.mkdir(os.path.join(here, each))
