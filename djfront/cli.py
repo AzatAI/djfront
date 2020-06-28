@@ -19,8 +19,8 @@ django app dir always has a manage.py file. that is always works as a django app
 
 2. find the index.html file at first and get the html file resources.
 """
-
 from .utils import prepare_dirs
+import click
 
 
 def cli():
