@@ -24,4 +24,16 @@ def get_all_htmls():
     return htmls
 
 
-print(get_all_htmls())
+def prepare_dirs():
+    """
+    check whether some dirs already created, if not create a new one.called
+    djstatic and djtemplates.
+    :return:
+    """
+    djstatic = os.path.join(here, 'djstatic')
+    djtemplates = os.path.join(here, 'djtemplates')
+    for each in [djstatic,djtemplates]:
+        if os.path.isdir(each):
+            pass
+        else:
+            os.path.mkdir(each)

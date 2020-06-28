@@ -23,3 +23,4 @@ django app dir always has a manage.py file. that is always works as a django app
 
 def cli():
     pass
+
